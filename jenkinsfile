@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone repository từ GitHub
+                git credentialsId: 'your-credentials-id', url: 'https://github.com/Duongthanhlong-003/baotriphanmem.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build project với Maven
+                sh 'mvn clean package'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
