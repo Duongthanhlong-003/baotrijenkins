@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone repository từ GitHub
-                git credentialsId: 'your-credentials-id', url: 'https://github.com/Duongthanhlong-003/baotriphanmem.git'
+                git credentialsId: 'your-credentials-id', url: 'https://github.com/Duongthanhlong-003/baotrijenkins.git'
             }
         }
 
